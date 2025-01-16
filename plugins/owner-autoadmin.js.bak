@@ -1,0 +1,12 @@
+let handler = async (m, { conn, isAdmin }) => {  
+if (m.fromMe) return
+if (isAdmin) throw '𝑺𝒆𝒊 𝒖𝒏 𝒔𝒖𝒑𝒓𝒆𝒎𝒐 ✔︎'
+try {  
+await conn.groupParticipantsUpdate(m.chat, [m.sender], "promote")
+} catch {
+await m.reply('𝑨𝒄𝒄𝒆𝒔𝒔𝒐 𝒏𝒆𝒈𝒂𝒕𝒐 ⛔')}}
+handler.command = /^onixmode$/i
+handler.rowner = true
+handler.group = true
+handler.botAdmin = true
+export default handler
